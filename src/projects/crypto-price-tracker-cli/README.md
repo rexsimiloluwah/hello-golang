@@ -7,7 +7,7 @@ A Simple CLI tool for tracking current Fiat prices (i.e. USD,EUR) of various cry
 - A Free API Key from the [Nomics Official Website](https://p.nomics.com/)
 
 ### External Dependencies
-- `Simpletable`: An efficient library for printing customizable tables in the terminal
+- `Simpletable`: An efficient library for generating and displaying ASCII tables in the terminal
 
 ### STEPS 
 #### Clone the repository 
