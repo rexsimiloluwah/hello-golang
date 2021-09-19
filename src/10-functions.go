@@ -48,6 +48,11 @@ func main() {
 
 	g1.greet()
 
+	fmt.Println("Fibonacci series from 1 - 100")
+	for i:=0; i < 10 ; i++{
+		fmt.Printf("%d,", getFib(i))
+	}
+
 }
 
 func quadSolver(x1 float64, x2 float64, x3 float64) (complex128, complex128, error) {
@@ -96,4 +101,13 @@ type greeter struct {
 
 func (g greeter) greet() {
 	fmt.Println(g.greeting, ",", g.name)
+}
+
+// Recursive function (Returns fibonacci digit)
+func getFib(n int) int{
+	if (n == 0 || n == 1){
+		return 1
+	} else{
+		return getFib(n-1) + getFib(n-2);
+	}
 }
