@@ -17,7 +17,7 @@ $ cd hello-golang/src/projects/crypto-price-tracker-cli
 ```
 #### Install required dependencies 
 ```bash
-$ go get -u go get -u github.com/alexeyco/simpletable
+$ go get -u github.com/alexeyco/simpletable
 ```
 
 *Ensure that the dependency is properly installed from your `$GOPATH/src/github.com/alexeyco/simpletable`
