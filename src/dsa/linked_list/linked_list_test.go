@@ -42,7 +42,9 @@ func TestSinglyLinkedList(t *testing.T) {
 
 	l.DeleteAt(1)
 	l.DeleteAt(5)
-	l.DeleteAt(2)
+	fmt.Println(l.size)
+	l.DeleteAt(8)
+	//fmt.Println(l.GetAt(7))
 
 	if l.size != 8 {
 		t.Errorf("Linked list currently contains 8 elements")
@@ -51,5 +53,8 @@ func TestSinglyLinkedList(t *testing.T) {
 	if l.GetAt(1).el != 1 {
 		t.Errorf("1 should be returned.")
 	}
+
+	fmt.Println(l.ToArray())
+	l.Reverse()
 	fmt.Println(l.ToArray())
 }

@@ -117,9 +117,13 @@ func (l *SinglyLinkedList) DeleteAt(pos int) {
 	if l.IsEmpty() {
 		panic("Linked list is empty")
 	}
+	if pos > l.size-1 {
+		panic("Index not in linked list.")
+	}
 	ptr := l.head
 	if pos == 0 {
 		l.head = ptr.next
+		l.size--
 		return
 	}
 
@@ -142,3 +146,14 @@ func (l *SinglyLinkedList) ToArray() []interface{} {
 }
 
 // TODO: Reverse a Singly linked list
+func (l *SinglyLinkedList) Reverse() {
+	currentHead := l.head
+	var prevHead *Node
+	for currentHead != nil {
+		nextHead := currentHead.next
+		currentHead.next = prevHead
+		prevHead = currentHead
+		currentHead = nextHead
+	}
+	l.head = prevHead
+}
