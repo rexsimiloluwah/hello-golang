@@ -1,0 +1,27 @@
+version: "3.3"
+
+services: 
+  app:
+    build: .
+    ports:
+      - 8040:8040 
+    depends_on:
+      - database
+    environment:
+      - ENV=development 
+      - DB_HOST=database
+    restart: always
+
+  database:
+    image: mongo
+    ports:
+      - 27017:27017 
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=secret 
+      - MONGO_INITDB_DATABASE=golang-mongo-starter
+    volumes:
+      - .mongodata:/data/db 
+    
+volumes: 
+  mongo:
